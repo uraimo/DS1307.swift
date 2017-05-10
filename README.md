@@ -1,6 +1,6 @@
 # DS1307.swift
 
-*A Swift library for the DS1307 64 x 8, Serial, I2C Real-Time Clock*
+*A Swift library for the DS1307 64x8, I2C Real-Time Clock*
 
 <p>
 <img src="https://img.shields.io/badge/os-linux-green.svg?style=flat" alt="Linux-only" />
