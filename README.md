@@ -17,6 +17,8 @@ This component is powered with 5V and requires a 32.768kHz Quartz Crystal oscill
 
 ![DS1307 diagram](https://github.com/uraimo/DS1307.swift/raw/master/ds1307.png)
 
+If you are not using a backup battery with this RTC, remember to connect Vbatt to GND.
+
 ## Supported Boards
 
 Every board supported by [SwiftyGPIO](https://github.com/uraimo/SwiftyGPIO): RaspberryPis, BeagleBones, C.H.I.P., etc...
@@ -63,6 +65,8 @@ print("\(year)/\(month)/\(date) \(hours):\(minutes):\(seconds)")
 ```
 
 The functions `start()` and `stop()` resume or pause the clock.
+
+A complete example is available under `Examples/`
 
 
 ## Installation
