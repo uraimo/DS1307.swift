@@ -35,7 +35,7 @@ public class DS1307{
        self.i2c = i2c
    }
 
-   var seconds: Int {
+   public var seconds: Int {
       get{
          let rv = i2c.readByte(address, command: 0)
          return Int(rv & 0xF + ((rv & 0x70)>>4) * 10)
@@ -47,7 +47,7 @@ public class DS1307{
       }
    }
 
-   var minutes: Int {
+   public var minutes: Int {
       get{
          let rv = i2c.readByte(address, command: 1)
          return Int(rv & 0xF + ((rv & 0x70)>>4) * 10)
@@ -58,7 +58,7 @@ public class DS1307{
       }
    }
 
-   var hours: Int {
+   public var hours: Int {
       get{
          let rv = i2c.readByte(address, command: 2)
          if rv & 0x40 > 1 {
@@ -77,7 +77,7 @@ public class DS1307{
 
    // Set/get for day of the week not necessary i guess
 
-   var date: Int {
+   public var date: Int {
       get{
          let rv = i2c.readByte(address, command: 4)
          return Int(rv & 0xF + ((rv & 0x30)>>4) * 10)
@@ -88,7 +88,7 @@ public class DS1307{
       }
    }
 
-   var month: Int {
+   public var month: Int {
       get{
          let rv = i2c.readByte(address, command: 5)
          return Int(rv & 0xF + ((rv & 0x10)>>4) * 10)
@@ -99,7 +99,7 @@ public class DS1307{
       }
    }
 
-   var year: Int {
+   public var year: Int {
       get{
          let rv = i2c.readByte(address, command: 6)
          return Int(rv & 0xF + ((rv & 0xF0)>>4) * 10)
@@ -110,12 +110,12 @@ public class DS1307{
       }
    }
 
-   func start() {
+   public func start() {
       let s = UInt8(seconds)
       seconds = Int(s & (~0x80))
    }
 
-   func stop() {
+   public func stop() {
       let s = UInt8(seconds)
       seconds = Int(s | 0x80)
    }
