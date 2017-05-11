@@ -3,7 +3,7 @@ import DS1307
 import Foundation
 
 let i2cs = SwiftyGPIO.hardwareI2Cs(for:.RaspberryPi2)!
-let i2c = i2cs[0]
+let i2c = i2cs[1]
 
 let ds = DS1307(i2c)
 
